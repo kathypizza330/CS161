@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+public class Rook extends ChessPiece {
+
+	public Rook(ChessBoard board, Color color) {
+		super(board, color);
+	}
+
+	public String toString() {
+		if (this.getColor().equals(Color.BLACK))
+			return "\u265C";
+		else
+			return "\u2656";
+	}
+
+	public ArrayList<String> legalMoves() {
+		ArrayList<String> stringList = new ArrayList<String>();
+		int left = (int) this.getPosition().charAt(0)-49;
+		int right = 8 - (int) this.getPosition().charAt(1);
+		for (int i=-7; i<=7; i++){
+			int number = left+i;
+			if (number>=0 && number <=7){
+				//String s = (char)((char)(number+49)+this.getPosition().charAt(1));
+			}
+		}
+		return null;
+	}
+
+}

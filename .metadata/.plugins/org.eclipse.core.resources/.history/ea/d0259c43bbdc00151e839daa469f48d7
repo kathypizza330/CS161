@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Bishop extends ChessPiece {
+
+	public Bishop(ChessBoard board, Color color) {
+		super(board, color);
+	}
+
+	public String toString() {
+		if (this.getColor().equals(Color.BLACK))
+			return "\u265D";
+		else
+			return "\u2657";
+	}
+
+	public ArrayList<String> legalMoves() {
+		ArrayList<String> stringList = new ArrayList<String>();
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+Name: Sutton, Jane	Score: 44	Grad? false
+Name: Harrison, Bob	Score: 45	Grad? false
+Name: Turing, Melissa	Score: 18	Grad? true
+Name: Price, Lisa	Score: 50	Grad? true
+Name: Willis, Sam	Score: 84	Grad? true

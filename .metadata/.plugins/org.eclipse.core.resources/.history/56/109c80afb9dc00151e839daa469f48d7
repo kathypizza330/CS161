@@ -1,0 +1,305 @@
+
+
+public class ChessBoard {
+	
+	private ChessPiece[][] board;
+	//ChessBoard b = new ChessBoard();
+	ChessPiece bRook;
+	ChessPiece bKnight;
+	ChessPiece bBishop;
+	ChessPiece bKing;
+	ChessPiece bQueen;
+	ChessPiece bPawn;
+	ChessPiece wRook;
+	ChessPiece wKnight;
+	ChessPiece wBishop;
+	ChessPiece wKing;
+	ChessPiece wQueen;
+	ChessPiece wPawn;
+
+
+
+	
+	//Constructor
+	public ChessBoard(){
+		board = new ChessPiece[8][8];
+		wPawn = new Pawn(this, ChessPiece.Color.WHITE);
+		bRook = new Rook(this, ChessPiece.Color.BLACK);
+		bKnight = new Knight(this, ChessPiece.Color.BLACK);
+		bBishop = new Bishop(this, ChessPiece.Color.BLACK);
+		bKing = new King(this, ChessPiece.Color.BLACK);
+		bQueen = new Queen(this, ChessPiece.Color.BLACK);
+		bPawn = new Pawn(this, ChessPiece.Color.BLACK);
+		wRook = new Rook(this, ChessPiece.Color.WHITE);
+		wKnight = new Knight(this, ChessPiece.Color.WHITE);
+		wBishop = new Bishop(this, ChessPiece.Color.WHITE);
+		wKing = new King(this, ChessPiece.Color.WHITE);
+		wQueen = new Queen(this, ChessPiece.Color.WHITE);
+	}
+	
+	//Methods
+	public void initialize(){
+		placePiece(bRook, "a8");
+		placePiece(bKnight, "b8");
+		placePiece(bBishop, "c8");
+		placePiece(bKing, "d8");
+		placePiece(bQueen, "e8");
+		placePiece(bBishop, "f8");
+		placePiece(bKnight, "g8");
+		placePiece(bRook, "h8");
+		placePiece(bPawn, "a7");
+		placePiece(bPawn, "b7");
+		placePiece(bPawn, "c7");
+		placePiece(bPawn, "d7");
+		placePiece(bPawn, "e7");
+		placePiece(bPawn, "f7");
+		placePiece(bPawn, "g7");
+		placePiece(bPawn, "h7");
+		placePiece(wRook, "a1");
+		placePiece(wKnight, "b1");
+		placePiece(wBishop, "c1");
+		placePiece(wKing, "d1");
+		placePiece(wQueen, "e1");
+		placePiece(wBishop, "f1");
+		placePiece(wKnight, "g1");
+		placePiece(wRook, "h1");
+		placePiece(wPawn, "a2");
+		placePiece(wPawn, "b2");
+		placePiece(wPawn, "c2");
+		placePiece(wPawn, "d2");
+		placePiece(wPawn, "e2");
+		placePiece(wPawn, "f2");
+		placePiece(wPawn, "g2");
+		placePiece(wPawn, "h2");
+	}
+	
+	public ChessPiece getPiece(String position){
+		switch (position){
+		case "a8": return board[0][0];
+		case "a7": return board[1][0];
+		case "a6": return board[2][0];
+		case "a5": return board[3][0];
+		case "a4": return board[4][0];
+		case "a3": return board[5][0];
+		case "a2": return board[6][0];
+		case "a1": return board[7][0];
+		case "b8": return board[0][1];
+		case "b7": return board[1][1];
+		case "b6": return board[2][1];
+		case "b5": return board[3][1];
+		case "b4": return board[4][1];
+		case "b3": return board[5][1];
+		case "b2": return board[6][1];
+		case "b1": return board[7][1];
+		case "c8": return board[0][2];
+		case "c7": return board[1][2];
+		case "c6": return board[2][2];
+		case "c5": return board[3][2];
+		case "c4": return board[4][2];
+		case "c3": return board[5][2];
+		case "c2": return board[6][2];
+		case "c1": return board[7][2];
+		case "d8": return board[0][3];
+		case "d7": return board[1][3];
+		case "d6": return board[2][3];
+		case "d5": return board[3][3];
+		case "d4": return board[4][3];
+		case "d3": return board[5][3];
+		case "d2": return board[6][3];
+		case "d1": return board[7][3];
+		case "e8": return board[0][4];
+		case "e7": return board[1][4];
+		case "e6": return board[2][4];
+		case "e5": return board[3][4];
+		case "e4": return board[4][4];
+		case "e3": return board[5][4];
+		case "e2": return board[6][4];
+		case "e1": return board[7][4];
+		case "f8": return board[0][5];
+		case "f7": return board[1][5];
+		case "f6": return board[2][5];
+		case "f5": return board[3][5];
+		case "f4": return board[4][5];
+		case "f3": return board[5][5];
+		case "f2": return board[6][5];
+		case "f1": return board[7][5];
+		case "g8": return board[0][6];
+		case "g7": return board[1][6];
+		case "g6": return board[2][6];
+		case "g5": return board[3][6];
+		case "g4": return board[4][6];
+		case "g3": return board[5][6];
+		case "g2": return board[6][6];
+		case "g1": return board[7][6];
+		case "h8": return board[0][7];
+		case "h7": return board[1][7];
+		case "h6": return board[2][7];
+		case "h5": return board[3][7];
+		case "h4": return board[4][7];
+		case "h3": return board[5][7];
+		case "h2": return board[6][7];
+		case "h1": return board[7][7];
+		default: return null;
+		}
+	}
+	
+	public boolean placePiece(ChessPiece piece, String position){
+		if (getPiece(position)==null){
+			put(piece, position);
+			piece.setPosition(position);
+			System.out.println(piece.getPosition());
+			System.out.println(position);
+			if (getPiece(position)==piece){
+				return true;
+			}
+			else{
+				//System.out.println(position);
+				return false;
+			}
+		}
+		else if (getPiece(position).getColor() != piece.getColor()){
+			put(piece, position);
+			piece.setPosition(position);
+			if (getPiece(position)==piece){
+				return true;
+			}
+			else
+				return false;
+		}
+		else 
+			return false;
+		
+	}
+	
+	public boolean move(String fromPosition, String toPosition){
+		return placePiece(getPiece(fromPosition), toPosition);
+	}
+	
+	public String toString(){
+	    String chess="";
+	    String upperLeft = "\u250C";
+	    String upperRight = "\u2510";
+	    String horizontalLine = "\u2500";
+	    String horizontal3 = horizontalLine + "\u3000" + horizontalLine;
+	    String verticalLine = "\u2502";
+	    String upperT = "\u252C";
+	    String bottomLeft = "\u2514";
+	    String bottomRight = "\u2518";
+	    String bottomT = "\u2534";
+	    String plus = "\u253C";
+	    String leftT = "\u251C";
+	    String rightT = "\u2524";
+
+	    String topLine = upperLeft;
+	    for (int i = 0; i<7; i++){
+	        topLine += horizontal3 + upperT;
+	    }
+	    topLine += horizontal3 + upperRight;
+
+	    String bottomLine = bottomLeft;
+	    for (int i = 0; i<7; i++){
+	        bottomLine += horizontal3 + bottomT;
+	    }
+	    bottomLine += horizontal3 + bottomRight;
+	    chess+=topLine + "\n";
+
+	    for (int row = 7; row >=0; row--){
+	        String midLine = "";
+	        for (int col = 0; col < 8; col++){
+	        	System.out.println(board[row][col]);
+	            if(board[row][col]==null) {
+	                midLine += verticalLine + " \u3000 ";
+	            } else {midLine += verticalLine + " "+board[row][col]+" ";}
+	        }
+	        midLine += verticalLine;
+	        String midLine2 = leftT;
+	        for (int i = 0; i<7; i++){
+	            midLine2 += horizontal3 + plus;
+	        }
+	        midLine2 += horizontal3 + rightT;
+	        chess+=midLine+ "\n";
+	        if(row>=1)
+	            chess+=midLine2+ "\n";
+	    }
+
+	    chess+=bottomLine;
+	    return chess;
+	}
+	
+	public void put(ChessPiece piece, String position){
+		switch (position){
+		case "a8": board[0][0] = piece;
+		case "a7": board[1][0] = piece;
+		case "a6": board[2][0] = piece;
+		case "a5": board[3][0] = piece;
+		case "a4": board[4][0] = piece;
+		case "a3": board[5][0] = piece;
+		case "a2": board[6][0] = piece;
+		case "a1": board[7][0] = piece;
+		case "b8": board[0][1] = piece;
+		case "b7": board[1][1] = piece;
+		case "b6": board[2][1] = piece;
+		case "b5": board[3][1] = piece;
+		case "b4": board[4][1] = piece;
+		case "b3": board[5][1] = piece;
+		case "b2": board[6][1] = piece;
+		case "b1": board[7][1] = piece;
+		case "c8": board[0][2] = piece;
+		case "c7": board[1][2] = piece;
+		case "c6": board[2][2] = piece;
+		case "c5": board[3][2] = piece;
+		case "c4": board[4][2] = piece;
+		case "c3": board[5][2] = piece;
+		case "c2": board[6][2] = piece;
+		case "c1": board[7][2] = piece;
+		case "d8": board[0][3] = piece;
+		case "d7": board[1][3] = piece;
+		case "d6": board[2][3] = piece;
+		case "d5": board[3][3] = piece;
+		case "d4": board[4][3] = piece;
+		case "d3": board[5][3] = piece;
+		case "d2": board[6][3] = piece;
+		case "d1": board[7][3] = piece;
+		case "e8": board[0][4] = piece;
+		case "e7": board[1][4] = piece;
+		case "e6": board[2][4] = piece;
+		case "e5": board[3][4] = piece;
+		case "e4": board[4][4] = piece;
+		case "e3": board[5][4] = piece;
+		case "e2": board[6][4] = piece;
+		case "e1": board[7][4] = piece;
+		case "f8": board[0][5] = piece;
+		case "f7": board[1][5] = piece;
+		case "f6": board[2][5] = piece;
+		case "f5": board[3][5] = piece;
+		case "f4": board[4][5] = piece;
+		case "f3": board[5][5] = piece;
+		case "f2": board[6][5] = piece;
+		case "f1": board[7][5] = piece;
+		case "g8": board[0][6] = piece;
+		case "g7": board[1][6] = piece;
+		case "g6": board[2][6] = piece;
+		case "g5": board[3][6] = piece;
+		case "g4": board[4][6] = piece;
+		case "g3": board[5][6] = piece;
+		case "g2": board[6][6] = piece;
+		case "g1": board[7][6] = piece;
+		case "h8": board[0][7] = piece;
+		case "h7": board[1][7] = piece;
+		case "h6": board[2][7] = piece;
+		case "h5": board[3][7] = piece;
+		case "h4": board[4][7] = piece;
+		case "h3": board[5][7] = piece;
+		case "h2": board[6][7] = piece;
+		case "h1": board[7][7] = piece;
+		}
+	}
+	
+	public static void main(String[] args) {
+	    ChessBoard board = new ChessBoard();
+	    board.initialize();
+	    
+	    System.out.println(board);
+	    //board.move("c2", "c4");
+	}
+}

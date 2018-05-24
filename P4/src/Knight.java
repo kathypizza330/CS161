@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class Knight extends ChessPiece {
+
+	public Knight(ChessBoard board, Color color) {
+		super(board, color);
+	}
+
+	public String toString() {
+		if (this.getColor().equals(Color.BLACK))
+			return "\u265E";
+		else
+			return "\u2658";
+	}
+
+	public ArrayList<String> legalMoves() {
+		ArrayList<String> s= new ArrayList<String>(0);
+		return s;
+	}
+
+}

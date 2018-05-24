@@ -1,0 +1,61 @@
+import java.util.ArrayList;
+
+public class Pawn extends ChessPiece {
+
+	public Pawn(ChessBoard board, Color color) {
+		super(board, color);
+	}
+
+	public String toString() {
+		if (this.getColor().equals(Color.BLACK))
+			return "\u265F";
+		else
+			return "\u2659";
+	}
+
+	public ArrayList<String> legalMoves() {
+		ArrayList<String> stringList = new ArrayList<String>();
+			//Initial place, move one or two forward
+		if (this.getColor() == Color.BLACK){
+			if (this.getPosition().charAt(1) == '7'){
+				String s1 = "", s2="";
+				s1+=this.getPosition().charAt(0)+'6';
+				s2+=this.getPosition().charAt(0)+'5';
+				stringList.add(s1);
+				stringList.add(s2);				
+			}
+			//Not initial place, move only one forward
+			else{
+				String s = "";
+				s+=this.getPosition().charAt(0);
+				int a = (int) this.getPosition().charAt(1);
+				if (a>=2){
+				char c = (char) (a-1);
+				s+=c;
+				stringList.add(s);
+				}
+			}
+		}
+		if (this.getColor() == Color.WHITE){
+			if (this.getPosition().charAt(1) == '2'){
+				String s1 = "", s2="";
+				s1+=this.getPosition().charAt(0)+'3';
+				s2+=this.getPosition().charAt(0)+'4';
+				stringList.add(s1);
+				stringList.add(s2);				
+			}
+			//Not initial place, move only one forward
+			else{
+				String s = "";
+				s+=this.getPosition().charAt(0);
+				int a = (int) this.getPosition().charAt(1);
+				if (a<=7){
+				char c = (char) (a+1);
+				s+=c;
+				stringList.add(s);
+				}
+			}
+		}
+		return stringList;
+	}
+}

@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+
+public class Pawn extends ChessPiece {
+
+	public Pawn(ChessBoard board, Color color) {
+		super(board, color);
+	}
+
+	public String toString() {
+		if (this.getColor().equals(Color.BLACK))
+			return "\u265F";
+		else
+			return "\u2659";
+	}
+
+	public ArrayList<String> legalMoves() {
+		ArrayList<String> stringList = new ArrayList<String>();
+			//Initial place, move one or two forward
+			if (this.getPosition().charAt(1) == 7){
+				String s1 = "", s2="";
+				s1+=this.getPosition().charAt(0)+6;
+				s2+=this.getPosition().charAt(0)+5;
+				stringList.add(s1);
+				stringList.add(s2);				
+			}
+			//Not initial place, move only one forward
+			else{
+				String s = "";
+				s+=this.getPosition().charAt(0);
+				char c = 0;//(char) ((int)this.getPosition().charAt(1)+1);
+				s+=c;
+				stringList.add(s);
+			}
+		return stringList;
+	}
+}
